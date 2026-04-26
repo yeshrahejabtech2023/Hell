@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --text-dim: #888888;
+  --input-bg: #111111;
+  --border: #222222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.output-area {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 0;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but allow scrolling */
+.output-area::-webkit-scrollbar {
+  display: none;
+}
+.output-area {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.message {
+  font-size: 1.05rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.user {
+  color: var(--text);
+}
+
+.ai {
+  color: var(--text-dim);
+}
+
+.input-container {
+  padding: 20px 0 40px 0;
+}
+
+.input-box {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-box:focus {
+  border-color: #444;
+}
+
+.markdown pre {
+  background: #0a0a0a;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+  overflow-x: auto;
+  border: 1px solid #222;
+}
+
+.markdown code {
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.markdown p {
+  margin-bottom: 16px;
+}
+
+.loading {
+  font-style: italic;
+  opacity: 0.5;
+}
